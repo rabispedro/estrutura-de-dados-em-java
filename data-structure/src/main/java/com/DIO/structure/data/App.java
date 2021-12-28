@@ -1,33 +1,31 @@
 package com.DIO.structure.data;
 
+import com.DIO.structure.data.queue.Queue;
 import com.DIO.structure.data.stack.Stack;
-import com.DIO.structure.data.utils.Node;
 
 public class App {
 	public static void main(String[] args) {
 		System.out.printf("Data Structure - DIO\n\n");
 
-		////////////////////////////////////////////////////////////////////////////
 
-		//	Data for general use
-		Node node1 = new Node(9);
-		Node node2 = new Node(5);
-		Node node3 = new Node(4);
-		Node node4 = new Node(7);
-		Node node5 = new Node(5);
-		Node node6 = new Node(3);
-		
+		Integer test = null;
+		System.out.printf("Test: " + test + "\n");
+
 		////////////////////////////////////////////////////////////////////////////
 		
 		System.out.printf("STACK:\n\n");
-		Stack myStack = new Stack();
+		Stack<String> myStack = new Stack<String>();
 
-		myStack.push(node1);
-		myStack.push(node2);
-		myStack.push(node3);
-		myStack.push(node4);
-		myStack.push(node5);
-		myStack.push(node6);
+		System.out.printf("Is this stack empty? " + myStack.isEmpty() + "\n");
+		System.out.printf("Top of the stack: " + myStack.top() + "\n");
+		System.out.printf(myStack.toString());
+
+		myStack.push("1");
+		myStack.push("2");
+		myStack.push("3");
+		myStack.push("4");
+		myStack.push("5");
+		myStack.push("6");
 
 		System.out.printf("Is this stack empty? " + myStack.isEmpty() + "\n");
 		System.out.printf("Top of the stack: " + myStack.top() + "\n");
@@ -51,8 +49,34 @@ public class App {
 
 		System.out.printf("QUEUE:\n\n");
 
+		Queue<String> myQueue = new Queue<String>();
 
+		System.out.printf("Is this queue empty? " + myQueue.isEmpty() + "\n");
+		System.out.printf("First node of the queue: " + myQueue.first() + "\n");
+		System.out.printf(myQueue.toString());
 
+		myQueue.enqueue("First");
+		myQueue.enqueue("Second");
+		myQueue.enqueue("Third");
+		myQueue.enqueue("Fourth");
+		myQueue.enqueue("Fifth");
+		myQueue.enqueue("Sixth");
+
+		System.out.printf("Is this queue empty? " + myQueue.isEmpty() + "\n");
+		System.out.printf("First node of the queue: " + myQueue.first() + "\n");
+		System.out.printf(myQueue.toString());
+
+		System.out.printf("\n");
+		
+		while(!myQueue.isEmpty()) {
+			System.out.printf("Dequeued node: " + myQueue.dequeue() + "\n");
+		}
+
+		System.out.printf("\n");
+
+		System.out.printf("Is this queue empty? " + myQueue.isEmpty() + "\n");
+		System.out.printf("First node of the queue: " + myQueue.first() + "\n");
+		System.out.printf(myQueue.toString());
 
 		////////////////////////////////////////////////////////////////////////////
 

@@ -2,8 +2,8 @@ package com.DIO.structure.data.stack;
 
 import com.DIO.structure.data.utils.Node;
 
-public class Stack {
-	private Node topNode;
+public class Stack <T> {
+	private Node<T> topNode;
 
 	public Stack() {
 		this.topNode = null;
@@ -13,21 +13,22 @@ public class Stack {
 		return (this.topNode == null ? true : false);
 	}
 
-	public Node top() {
-		return this.topNode;
+	public T top() {
+		return (this.topNode == null ? null : this.topNode.getData());
 	}
 
-	public void push(Node node) {
-		Node tempNode = this.topNode;
+	public void push(T value) {
+		Node<T> node = new Node<T>(value);
+		Node<T> tempNode = this.topNode;
 		this.topNode = node;
-		node.setRedefenceNode(tempNode);
+		node.setReferenceNode(tempNode);
 	}
 
-	public Node pop() {
+	public T pop() {
 		if(!this.isEmpty()) {
-			Node tempNode = this.topNode;
-			this.topNode = this.topNode.getRedefenceNode();
-			return tempNode;
+			Node<T> tempNode = this.topNode;
+			this.topNode = this.topNode.getReferenceNode();
+			return tempNode.getData();
 		}
 		return null;
 	}
@@ -36,10 +37,10 @@ public class Stack {
 	public String toString() {
 		String tempString = "Stack : {\n\t";
 		
-		Node tempNode = this.topNode;
+		Node<T> tempNode = this.topNode;
 		while(tempNode != null) {
 			tempString += tempNode.toString();
-			tempNode = tempNode.getRedefenceNode();
+			tempNode = tempNode.getReferenceNode();
 			if(tempNode != null ) {
 				tempString += "\n\t";
 			}
@@ -48,6 +49,4 @@ public class Stack {
 		tempString += "\n}\n";
 		return tempString;
 	}
-
-	
 }

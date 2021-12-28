@@ -1,35 +1,36 @@
 package com.DIO.structure.data.utils;
 
-public class Node {
-	private int data;
-	private Node redefenceNode = null;
+public class Node <T> {
+	private T data;
+	private Node<T> referenceNode;
 
 	public Node() {
 
 	}
 
-	public Node(int data) {
+	public Node(T data) {
+		this.data = data;
+		this.referenceNode = null;
+	}
+
+	public T getData() {
+		return this.data;
+	}
+
+	public void setData(T data) {
 		this.data = data;
 	}
 
-	public int getData() {
-		return data;
+	public Node getReferenceNode() {
+		return this.referenceNode;
 	}
 
-	public void setData(int data) {
-		this.data = data;
-	}
-
-	public Node getRedefenceNode() {
-		return redefenceNode;
-	}
-
-	public void setRedefenceNode(Node redefenceNode) {
-		this.redefenceNode = redefenceNode;
+	public void setReferenceNode(Node redefenceNode) {
+		this.referenceNode = redefenceNode;
 	}
 
 	@Override
 	public String toString() {
-		return ("Node : { data : " + data + " } ");
+		return ("Node : { data : " + this.data + " } ");
 	}	
 }
