@@ -1,8 +1,9 @@
-package com.DIO.structure.data.queue;
+package com.DIO.structure.data.implementations;
 
-import com.DIO.structure.data.utils.Node;
+import com.DIO.structure.data.Node;
+import com.DIO.structure.data.interfaces.IQueue;
 
-public class Queue <T> {
+public class Queue<T> implements IQueue<T> {
 	private Node<T> startNode;
 
 	public Queue() {
@@ -14,62 +15,62 @@ public class Queue <T> {
 	}
 
 	public void enqueue(T value) {
-		Node<T> node = new Node<T>(value);
-		node.setReferenceNode(this.startNode);
+		Node<T> node = new Node<>(value);
+		node.setNextNode(this.startNode);
 		this.startNode = node;
 	}
 
 	public T dequeue() {
-		if(!this.isEmpty()) {
+		if (!this.isEmpty()) {
 			Node<T> tempNode = this.startNode;
 			Node<T> previousNode = this.startNode;
 
-			if(tempNode.getReferenceNode() == null) {
+			if (tempNode.getNextNode() == null) {
 				this.startNode = null;
-				return tempNode.getData();
+				return tempNode.getValue();
 			}
 			
-			while(tempNode.getReferenceNode() != null) {
+			while (tempNode.getNextNode() != null) {
 				previousNode = tempNode;
-				tempNode = tempNode.getReferenceNode();
+				tempNode = tempNode.getNextNode();
 			}
 
-			previousNode.setReferenceNode(null);
-
-			return tempNode.getData();
+			previousNode.setNextNode(null);
+			return tempNode.getValue();
 		}
+
 		return null;
 	}
 
 	public T first() {
-		if(!this.isEmpty()) {
+		if (!this.isEmpty()) {
 			Node<T> tempNode = this.startNode;
 
-			while(tempNode.getReferenceNode() != null) {
-				tempNode = tempNode.getReferenceNode();
+			while (tempNode.getNextNode() != null) {
+				tempNode = tempNode.getNextNode();
 			}
 
-			return tempNode.getData();
+			return tempNode.getValue();
 		}
+
 		return null;
 	}
 
 	@Override
 	public String toString() {
 		String tempString = "Queue : {\n\t";
-		
+
 		Node<T> tempNode = this.startNode;
-		while(tempNode != null) {
+		while (tempNode != null) {
 			tempString += tempNode.toString();
-			tempNode = tempNode.getReferenceNode();
-			if(tempNode != null ) {
+			tempNode = tempNode.getNextNode();
+
+			if (tempNode != null ) {
 				tempString += "\n\t";
 			}
 		}
-		
+
 		tempString += "\n}\n";
 		return tempString;
 	}
-
-
 }
