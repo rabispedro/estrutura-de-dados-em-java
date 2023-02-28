@@ -48,9 +48,20 @@ Estudo baseado no conteúdo do curso Estrutura de Dados em Java da plataforma [D
   - [x] enqueue
   - [x] dequeue
 - Linked List:
-  <!-- - [ ]  -->
+  - [x] isEmpty
+  - [x] add
+  - [x] remove
+  - [x] get
+  - [x] size
 - Doubly Linked List:
-  <!-- - [ ]  -->
+  - [x] isEmpty
+  - [x] add
+  - [x] add (index)
+  - [x] remove
+  - [x] get
+  - [x] size
+  - [x] first
+  - [x] last
 - Circular Linked List:
   <!-- - [ ]  -->
 - Binary Tree:

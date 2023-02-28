@@ -26,19 +26,19 @@ public class Stack<T> implements IStack<T> {
 	}
 
 	public T pop() {
-		if (!this.isEmpty()) {
-			Node<T> tempNode = this.topNode;
-			this.topNode = this.topNode.getNextNode();
-
-			return tempNode.getValue();
+		if (this.isEmpty()) {
+			return null;
 		}
 
-		return null;
+		Node<T> tempNode = this.topNode;
+		this.topNode = this.topNode.getNextNode();
+
+		return tempNode.getValue();
 	}
 
 	@Override
 	public String toString() {
-		String tempString = "Stack : {\n\t";
+		String tempString = "{\n\t\"stack\": [\n\t\t";
 		
 		Node<T> tempNode = this.topNode;
 		while (tempNode != null) {
@@ -46,11 +46,11 @@ public class Stack<T> implements IStack<T> {
 			tempNode = tempNode.getNextNode();
 
 			if (tempNode != null ) {
-				tempString += "\n\t";
+				tempString += ",\n\t\t";
 			}
 		}
 
-		tempString += "\n}\n";
+		tempString += "\n\t]\n}\n";
 		return tempString;
 	}
 }
