@@ -129,7 +129,8 @@ public class App {
 		System.out.printf(myDoublyLinkedList + "\n");
 
 		while (!myDoublyLinkedList.isEmpty()) {
-			System.out.printf("Removed: " + myDoublyLinkedList.remove(0) + "\n");
+			// System.out.printf("Removed: " + myDoublyLinkedList.remove(0) + "\n");
+			System.out.printf("Removed: " + myDoublyLinkedList.remove(myDoublyLinkedList.size()-1) + "\n");
 		}
 		System.out.printf("\n");
 

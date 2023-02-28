@@ -41,8 +41,6 @@ public class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
 			return;
 		}
 
-		this.size++;
-
 		newNode.setNextNode(node);
 		newNode.setPreviousNode(node.getPreviousNode());
 		
@@ -54,9 +52,8 @@ public class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
 		if (index == 0) {
 			this.firstNode = newNode;
 		}
-		if (index == this.size) {
-			this.lastNode = newNode;
-		}
+
+		this.size++;
 	}
 
 	public T remove(int index) {
@@ -66,12 +63,10 @@ public class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
 			return null;
 		}
 
-		this.size--;
-
 		if (index == 0) {
 			this.firstNode = node.getNextNode();
 		}
-		if (index == this.size) {
+		if (index == this.size-1) {
 			this.lastNode = node.getPreviousNode();
 		}
 
@@ -85,6 +80,7 @@ public class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
 		node.setNextNode(null);
 		node.setPreviousNode(null);
 
+		this.size--;
 		return node.getValue();
 	}
 
