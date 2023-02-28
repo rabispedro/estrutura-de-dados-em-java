@@ -30,9 +30,9 @@ Estudo baseado no conteúdo do curso Estrutura de Dados em Java da plataforma [D
 
 - Stack: 🚀️ - Pronto
 - Queue: 🚀️ - Pronto
-- Linked List: 🚧️ - Em Andamento
-- Doubly Linked List: ⏱️ - Em aguardo
-- Circular Linked List: ⏱️ - Em aguardo
+- Linked List: 🚀️ - Pronto
+- Doubly Linked List: 🚀️ - Pronto
+- Circular Linked List: 🚧️ - Em Andamento
 - Binary Tree: ⏱️ - Em aguardo
 
 ## Features
