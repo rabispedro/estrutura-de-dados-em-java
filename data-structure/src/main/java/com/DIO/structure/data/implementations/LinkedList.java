@@ -3,7 +3,7 @@ package com.DIO.structure.data.implementations;
 import com.DIO.structure.data.Node;
 import com.DIO.structure.data.interfaces.ILinkedList;
 
-public class LinkedList<T> implements ILinkedList<T> {
+public class LinkedList<T extends Comparable<T>> implements ILinkedList<T> {
 	private Node<T> nextNode;
 	private int size;
 

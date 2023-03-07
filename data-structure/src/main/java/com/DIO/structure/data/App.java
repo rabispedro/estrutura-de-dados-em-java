@@ -1,5 +1,8 @@
 package com.DIO.structure.data;
 
+import com.DIO.structure.data.enums.BinaryTreeOrderEnum;
+import com.DIO.structure.data.implementations.BinaryTree;
+import com.DIO.structure.data.implementations.CircularLinkedList;
 import com.DIO.structure.data.implementations.DoublyLinkedList;
 import com.DIO.structure.data.implementations.LinkedList;
 import com.DIO.structure.data.implementations.Queue;
@@ -129,8 +132,7 @@ public class App {
 		System.out.printf(myDoublyLinkedList + "\n");
 
 		while (!myDoublyLinkedList.isEmpty()) {
-			// System.out.printf("Removed: " + myDoublyLinkedList.remove(0) + "\n");
-			System.out.printf("Removed: " + myDoublyLinkedList.remove(myDoublyLinkedList.size()-1) + "\n");
+			System.out.printf("Removed: " + myDoublyLinkedList.remove(0) + "\n");
 		}
 		System.out.printf("\n");
 
@@ -143,9 +145,80 @@ public class App {
 		// -------------------------------------------------------------------------
 
 		System.out.printf("[CIRCULAR LINKED LIST]-------------------------------\n\n");
+		CircularLinkedList<String> myCircularLinkedList = new CircularLinkedList<>();
+
+		System.out.printf("Is this circular linked list empty? " + myCircularLinkedList.isEmpty() + "\n");
+		System.out.printf("Size of the circular linked list: " + myCircularLinkedList.size() + "\n");
+		System.out.printf("First value of the circular linked list: " + myCircularLinkedList.first() + "\n");
+		System.out.printf("Last value of the circular linked list: " + myCircularLinkedList.last() + "\n");
+		System.out.printf(myCircularLinkedList + "\n");
+
+		myCircularLinkedList.add("♣️");
+		myCircularLinkedList.add("♥️");
+		myCircularLinkedList.add("♠️");
+		myCircularLinkedList.add("♦️");
+
+		System.out.printf("Is this circular linked list empty? " + myCircularLinkedList.isEmpty() + "\n");
+		System.out.printf("Size of the circular linked list: " + myCircularLinkedList.size() + "\n");
+		System.out.printf("First value of the circular linked list: " + myCircularLinkedList.first() + "\n");
+		System.out.printf("Last value of the circular linked list: " + myCircularLinkedList.last() + "\n");
+		System.out.printf(myCircularLinkedList + "\n");
+
+		while (!myCircularLinkedList.isEmpty()) {
+			System.out.printf("Removed:" + myCircularLinkedList.remove(0) + "\n");
+		}
+		System.out.printf("\n");
+
+		System.out.printf("Is this circular linked list empty? " + myCircularLinkedList.isEmpty() + "\n");
+		System.out.printf("Size of the circular linked list: " + myCircularLinkedList.size() + "\n");
+		System.out.printf("First value of the circular linked list: " + myCircularLinkedList.first() + "\n");
+		System.out.printf("Last value of the circular linked list: " + myCircularLinkedList.last() + "\n");
+		System.out.printf(myCircularLinkedList + "\n");
 
 		// -------------------------------------------------------------------------
+		System.out.printf("[BINARY TREE]--------------------------------------\n\n");
+		BinaryTree<Integer> myBinaryTree = new BinaryTree<>();
 
-		
+		System.out.printf("Is this binary tree empty? " + myBinaryTree.isEmpty() + "\n");
+		System.out.printf("Root of this binary tree: " + myBinaryTree.root() + "\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.IN_ORDER);
+		System.out.printf("\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.PRE_ORDER);
+		System.out.printf("\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.POS_ORDER);
+		System.out.printf("\n\n");
+
+		myBinaryTree.add(13);
+		myBinaryTree.add(10);
+		myBinaryTree.add(25);
+		myBinaryTree.add(2);
+		myBinaryTree.add(12);
+		myBinaryTree.add(20);
+		myBinaryTree.add(31);
+		myBinaryTree.add(29);
+
+		System.out.printf("Is this binary tree empty? " + myBinaryTree.isEmpty() + "\n");
+		System.out.printf("Root of this binary tree: " + myBinaryTree.root() + "\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.IN_ORDER);
+		System.out.printf("\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.PRE_ORDER);
+		System.out.printf("\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.POS_ORDER);
+		System.out.printf("\n\n");
+
+		while (!myBinaryTree.isEmpty()) {
+			System.out.printf("Removed: " + myBinaryTree.root() + " \n");
+			myBinaryTree.remove(myBinaryTree.root());
+		}
+		System.out.printf("\n");
+
+		System.out.printf("Is this binary tree empty? " + myBinaryTree.isEmpty() + "\n");
+		System.out.printf("Root of this binary tree: " + myBinaryTree.root() + "\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.IN_ORDER);
+		System.out.printf("\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.PRE_ORDER);
+		System.out.printf("\n");
+		myBinaryTree.show(BinaryTreeOrderEnum.POS_ORDER);
+		System.out.printf("\n\n");
 	}
 }

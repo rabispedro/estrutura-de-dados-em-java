@@ -3,7 +3,7 @@ package com.DIO.structure.data.implementations;
 import com.DIO.structure.data.Node;
 import com.DIO.structure.data.interfaces.IQueue;
 
-public class Queue<T> implements IQueue<T> {
+public class Queue<T extends Comparable<T>> implements IQueue<T> {
 	private Node<T> lastNode;
 
 	public Queue() {

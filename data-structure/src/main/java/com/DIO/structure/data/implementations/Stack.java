@@ -3,7 +3,7 @@ package com.DIO.structure.data.implementations;
 import com.DIO.structure.data.Node;
 import com.DIO.structure.data.interfaces.IStack;
 
-public class Stack<T> implements IStack<T> {
+public class Stack<T extends Comparable<T>> implements IStack<T> {
 	private Node<T> topNode;
 
 	public Stack() {

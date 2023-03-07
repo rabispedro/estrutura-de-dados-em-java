@@ -32,8 +32,8 @@ Estudo baseado no conteúdo do curso Estrutura de Dados em Java da plataforma [D
 - Queue: 🚀️ - Pronto
 - Linked List: 🚀️ - Pronto
 - Doubly Linked List: 🚀️ - Pronto
-- Circular Linked List: 🚧️ - Em Andamento
-- Binary Tree: ⏱️ - Em aguardo
+- Circular Linked List: 🚀️ - Pronto
+- Binary Tree: 🚧️ - Em Andamento
 
 ## Features
 
@@ -63,9 +63,20 @@ Estudo baseado no conteúdo do curso Estrutura de Dados em Java da plataforma [D
   - [x] first
   - [x] last
 - Circular Linked List:
-  <!-- - [ ]  -->
+  - [x] isEmpty
+  - [x] add
+  - [x] remove
+  - [x] get
+  - [x] size
+  - [x] first
+  - [x] last
 - Binary Tree:
-  <!-- - [ ]  -->
+  - [x] isEmpty
+  - [x] add
+  - [x] remove
+  - [x] root
+  - [x] show
+  - [x] show (order)
 
 ## Node
 

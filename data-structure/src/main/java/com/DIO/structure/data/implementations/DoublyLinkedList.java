@@ -3,7 +3,7 @@ package com.DIO.structure.data.implementations;
 import com.DIO.structure.data.Node;
 import com.DIO.structure.data.interfaces.IDoublyLinkedList;
 
-public class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
+public class DoublyLinkedList<T extends Comparable<T>> implements IDoublyLinkedList<T> {
 	private Node<T> firstNode;
 	private Node<T> lastNode;
 	private int size;
@@ -98,20 +98,6 @@ public class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
 		return this.size;
 	}
 
-	private Node<T> getNode(int index) {
-		if (index < 0 || index > this.size) {
-			return null;
-		}
-
-		Node<T> tempNode = this.firstNode;
-		while (index > 0 && tempNode != null) {
-			index--;
-			tempNode = tempNode.getNextNode();
-		}
-
-		return tempNode;
-	}
-
 	public T first() {
 		if (this.firstNode == null) {
 			return null;
@@ -126,6 +112,20 @@ public class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
 		}
 
 		return this.lastNode.getValue();
+	}
+
+	private Node<T> getNode(int index) {
+		if (index < 0 || index > this.size-1) {
+			return null;
+		}
+
+		Node<T> tempNode = this.firstNode;
+		while (index > 0 && tempNode != null) {
+			index--;
+			tempNode = tempNode.getNextNode();
+		}
+
+		return tempNode;
 	}
 
 	@Override
